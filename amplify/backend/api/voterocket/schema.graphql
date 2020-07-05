@@ -1,0 +1,21 @@
+type Candidate @model {
+  id: ID!
+  name: String!
+  description: String
+  votes: Int!
+}
+input CastVoteInput {
+  id: ID!
+  votes: Int!
+}
+
+type Mutation {
+  castVote(input: CastVoteInput!): Candidate
+}
+
+type Subscription {
+  onCastVote: Candidate
+    @aws_subscribe(mutations: ["castVote"])
+}
+
+
