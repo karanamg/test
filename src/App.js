@@ -4,7 +4,7 @@ import * as queries from './graphql/queries';
 import * as mutations from './graphql/mutations';
 import * as subscriptions from './graphql/subscriptions';
 import aws_exports from './aws-exports';
-import { Pie } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
 Amplify.configure(aws_exports);
 
@@ -205,7 +205,7 @@ class Chart extends Component {
       }
     }
     return (
-      <Pie data={data} width={80} height={50} options={options} />
+      <Bar data={data} width={100} height={50} options={options} />
     );
   }
 }
